@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3rbypkssijxm"]
+
+[ext_resource type="Texture2D" uid="uid://baxfg4idxpd45" path="res://assets/you_lost_end_screen.png" id="1_2ho3e"]
+[ext_resource type="Script" uid="uid://cvjcx5mugcngv" path="res://scenes/you_lost_end_screen.gd" id="1_ku7yk"]
+[ext_resource type="FontFile" uid="uid://cnyyk1fwjyrdx" path="res://assets/pixel_font.ttf" id="2_ku7yk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ho3e"]
+bg_color = Color(0.5686275, 0.24705882, 0.68235296, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku7yk"]
+bg_color = Color(0.5686275, 0.24705882, 0.68235296, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="YouLostEndScreen" type="Node2D"]
+script = ExtResource("1_ku7yk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2ho3e")
+centered = false
+
+[node name="RetryButton" type="Button" parent="."]
+offset_left = 532.0
+offset_top = 440.0
+offset_right = 620.0
+offset_bottom = 464.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ku7yk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ho3e")
+text = "RETRY"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 540.0
+offset_top = 480.0
+offset_right = 612.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ku7yk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ku7yk")
+text = "EXIT"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

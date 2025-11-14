@@ -1,0 +1,8 @@
+config_version=5
+
+[application]
+
+config/name="Pong, but with Exta Steps (Backup of Original Pong)"
+run/main_scene="uid://d253kgk01rybj"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
