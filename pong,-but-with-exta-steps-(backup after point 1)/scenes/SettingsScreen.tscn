@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7m2ejgnnvysg"]
+
+[ext_resource type="Texture2D" uid="uid://dpxuqjlcwfgqk" path="res://assets/settings_screen.png" id="1_c15cj"]
+[ext_resource type="Script" uid="uid://do55nqj330fwn" path="res://scenes/settings_screen.gd" id="1_ltv5i"]
+[ext_resource type="FontFile" uid="uid://cnyyk1fwjyrdx" path="res://assets/pixel_font.ttf" id="2_ltv5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6ukm"]
+bg_color = Color(0.5686275, 0.24705882, 0.68235296, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dey5f"]
+bg_color = Color(0.5686275, 0.24705882, 0.68235296, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="SettingsScreen" type="Node2D"]
+script = ExtResource("1_ltv5i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c15cj")
+centered = false
+
+[node name="MusicToggleButton" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 256.0
+offset_right = 684.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ltv5i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6ukm")
+text = "MUSIC TOGGLE"
+
+[node name="SoundEffectsToggleButton" type="Button" parent="."]
+offset_left = 407.0
+offset_top = 316.0
+offset_right = 746.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ltv5i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6ukm")
+text = "SOUND EFFECTS TOGGLE"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 524.0
+offset_top = 376.0
+offset_right = 628.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ltv5i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dey5f")
+text = "BACK"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
